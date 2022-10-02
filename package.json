@@ -1,0 +1,24 @@
+{
+  "name": "halfvideo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "backend/index.js",
+  "scripts": {
+    "watch": "npx tsc -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@types/fluent-ffmpeg": "^2.1.20",
+    "fluent-ffmpeg": "^2.1.2",
+    "ws": "^8.9.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^18.7.23",
+    "@types/ws": "^8.5.3",
+    "typescript": "^4.8.4"
+  }
+}
