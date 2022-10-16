@@ -117,13 +117,18 @@ wss.on("connection", (ws) => {
                     tokenLinks[initialToken].push(expectedToken);
 
                     // file saved! send back...
-                    ws.send(
-                        JSON.stringify({
-                            action: "Buffer",
-                            buffer: fs.readFileSync(file).toString("base64"),
-                            token: expectedToken,
-                        })
-                    );
+                    setTimeout(() => {
+                        if (!fs.existsSync(`streams/${data.token}.mp4`)) return;
+                        ws.send(
+                            JSON.stringify({
+                                action: "Buffer",
+                                buffer: fs
+                                    .readFileSync(`streams/${data.token}.mp4`)
+                                    .toString("base64"),
+                                token: expectedToken,
+                            })
+                        );
+                    }, 100);
 
                     // delete
                     setTimeout(() => {
